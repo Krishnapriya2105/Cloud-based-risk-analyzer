@@ -1,0 +1,25 @@
+{% extends "_base.htm" %}
+{% block title %}
+Risk Analysis Result
+{% endblock %}
+{% block pageblock %}
+	<div id="up">
+		<h1>RISK ANALYSIS RESULTS For Tesla <br/><br/></h1>
+	</div>
+{% include 'chart.htm' %}
+{% include 'table.htm' %}
+<div id="down">
+		<h3>Further options:&nbsp;</h3>
+		<form id="stats" method="post" action="/terminate">
+		<h4><input type="submit" name="Terminate" value="Terminate" /></h4>
+		</form>
+		
+		<form id="audit" method="post" action="/audit/{{ audit }}">
+		<h4><input type="submit" name="Audit" value="Auditpage" /></h4>
+		</form>
+		
+		<form id="reset" method="post" action="/reset/{{ s }}/{{ r }}">
+		<h4><input type="submit" name="reset" value="reset" /></h4>
+		</form>
+</div>
+{% endblock %}

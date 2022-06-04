@@ -1,0 +1,37 @@
+{% extends "_base.htm" %}
+{% block title %}
+	HomePage
+{% endblock %}
+{% block pageblock %}
+	<div id="up">
+		<h1>Stock Risk Analysis. 
+<br/><br/></h1>
+
+	<div id="down">
+		<h2>Select the Trading signal:&nbsp;</h2>
+		<form id="stats" method="post" action="/analysis/{{ s }}/{{ r }}">
+			<select name = "tradeselect" id = "select">  
+				<option>Noselect</option>
+				<option>Buy</option>
+				<option>Sell</option>
+			</select>
+		<h3>Length of Price history :&nbsp;</h3>
+				<h4>Price History <input type="text" name="pricehistory" 
+		/><br/></h4>
+		<h3>Number of data points :&nbsp;</h3>
+				<h4>Data points <input type="text" name="datapoints" 
+		/><br/></h4>
+				<h4><input type="submit" name="Submit" value="Submit" />
+				<input type="submit" name='cancel' value="Cancel"
+			onclick="window.location='/'; return false;" 
+/><br/></h4
+>
+		</form>
+		{% if note %}
+		<h3 style="color: #11FFFF">
+			{{ note }}
+		</h3>
+		{% endif %}
+
+{% endblock %}
+

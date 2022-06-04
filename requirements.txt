@@ -1,0 +1,10 @@
+Flask==1.1.1
+gunicorn==20.0.4
+boto3==1.10.50
+itsdangerous==2.0.1
+jinja2==3.0.3
+werkzeug==2.0.3
+pandas
+yfinance
+pandas_datareader
+requests

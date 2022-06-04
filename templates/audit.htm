@@ -1,0 +1,34 @@
+{% extends "_base.htm" %}
+{% block title %}
+Risk Analysis Result
+{% endblock %}
+{% block pageblock %}
+	<div id="up">
+		<h1>RISK ANALYSIS RESULTS <br/><br/></h1>
+	</div>
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+    google.charts.load('current', {'packages':['table']});
+    google.charts.setOnLoadCallback(drawTable);
+    var values = {{ df | tojson }};
+    function drawTable() {
+    	var data = new google.visualization.arrayToDataTable(values);
+	var table = new google.visualization.Table(document.getElementById('table_div'));
+
+
+        table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+      }     
+
+      
+
+     
+    </script>
+</head>
+  <body>
+    <div id="table_div"></div>
+  </body>
+</html>
+
+{% endblock %}

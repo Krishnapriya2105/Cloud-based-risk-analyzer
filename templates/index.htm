@@ -1,0 +1,34 @@
+{% extends "_base.htm" %}
+{% block title %}
+	HomePage
+{% endblock %}
+{% block pageblock %}
+	<div id="up">
+		<h1>Stock Risk Analysis. 
+<br/><br/></h1>
+
+	<div id="down">
+		<h2>Select the Resource from the dropdown:&nbsp;</h2>
+		<form id="stats" method="post" action="/input">
+			<select name = "select" id = "select">  
+				<option>Noselect</option>
+				<option>Lambda</option>
+				<option>EC2</option>
+			</select>
+		<h3>Please provide the number of resources :&nbsp;</h3>
+				<h4>Number of Resources: <input type="text" name="Resources" 
+		/><br/></h4>
+				<h4><input type="submit" name="Submit" value="Submit" />
+				<input type="submit" name='cancel' value="Cancel"
+			onclick="window.location='/'; return false;" 
+/><br/></h4
+>
+		</form>
+		{% if note %}
+		<h3 style="color: #11FFFF">
+			{{ note }}
+		</h3>
+		{% endif %}
+
+{% endblock %}
+
